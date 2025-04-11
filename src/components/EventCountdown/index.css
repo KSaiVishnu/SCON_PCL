@@ -1,0 +1,64 @@
+/* EventCountdown Component Styles */
+.event-countdown {
+    background: linear-gradient(135deg, #252538, #1e1e2f);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+  
+  .event-countdown h3 {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #a0a0a0;
+  }
+  
+  .countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .countdown-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .countdown-label {
+    font-size: 0.75rem;
+    color: #a0a0a0;
+    margin-top: 4px;
+  }
+  
+  .countdown-separator {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #6366f1;
+    margin: 0 8px;
+    padding-bottom: 24px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .countdown-value {
+      font-size: 1.5rem;
+    }
+  
+    .countdown-separator {
+      font-size: 1.5rem;
+      margin: 0 4px;
+    }
+  }
+  

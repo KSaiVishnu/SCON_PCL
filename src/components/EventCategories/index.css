@@ -1,0 +1,119 @@
+/* EventCategories Component Styles */
+.event-categories {
+    background-color: #1e1e2f;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1.5rem;
+  }
+  
+  .categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #252538;
+  }
+  
+  .categories-header:hover {
+    background-color: #252538;
+  }
+  
+  .categories-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .categories-title svg {
+    color: #6366f1;
+  }
+  
+  .categories-title h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e0e0e0;
+  }
+  
+  .expand-button {
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .expand-button.expanded {
+    transform: rotate(90deg);
+  }
+  
+  .categories-list {
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+  }
+  
+  .category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .category-item:hover:not(.active) {
+    background-color: #252538;
+  }
+  
+  .category-item.active {
+    background-color: rgba(99, 102, 241, 0.15);
+    position: relative;
+  }
+  
+  .category-item.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+    border-radius: 0 3px 3px 0;
+  }
+  
+  .category-name {
+    color: #e0e0e0;
+    font-weight: 500;
+  }
+  
+  .category-count {
+    background-color: #252538;
+    color: #a0a0a0;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    min-width: 24px;
+    text-align: center;
+  }
+  
+  .category-item.active .category-count {
+    background-color: #6366f1;
+    color: white;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .event-categories {
+      margin-bottom: 1rem;
+    }
+  }
+  
