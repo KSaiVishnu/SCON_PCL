@@ -1,19 +1,18 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import Login from './components/Login'
+import Login from "./components/Login";
 import Home from "./components/Home";
-import Jobs from './components/Jobs';
-import JobItemDetailsWrapper from './components/JobItemDetailsWrapper'
-import EventsWrapper from './components/EventsWrapper';
-import EventDetails from './components/EventDetails';
+import Jobs from "./components/Jobs";
+import JobItemDetailsWrapper from "./components/JobItemDetailsWrapper";
+import EventsWrapper from "./components/EventsWrapper";
+import EventDetails from "./components/EventDetails";
 
-import NotFound from './components/NotFound'
+import NotFound from "./components/NotFound";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
 import "./App.css";
 import Quizzes from "./components/Quizzes";
-import QuizList from "./components/QuizList";
 import QuizDetails from "./components/QuizDetails";
 
 const App = () => (
@@ -21,7 +20,7 @@ const App = () => (
 
   <BrowserRouter>
     <Routes>
-    <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
 
       <Route
         path="/"
@@ -32,17 +31,43 @@ const App = () => (
         }
       />
 
+      <Route
+        path="/events"
+        element={
+          <ProtectedRoute>
+            <EventsWrapper />
+          </ProtectedRoute>
+        }
+      />
 
-<Route path="/events" element={<EventsWrapper />} />
-<Route exact path="/events/:id" element={<EventDetails />} />
+      <Route
+        path="/events/:id"
+        element={
+          <ProtectedRoute>
+            <EventDetails />
+          </ProtectedRoute>
+        }
+      />
 
-<Route path="/quizzes" element={<Quizzes />} />
-<Route exact path="/quizzes/:id" element={<QuizDetails />} />
+      <Route
+        path="/quizzes"
+        element={
+          <ProtectedRoute>
+            <Quizzes />
+          </ProtectedRoute>
+        }
+      />
 
+      <Route
+        path="/quizzes/:id"
+        element={
+          <ProtectedRoute>
+            <QuizDetails />
+          </ProtectedRoute>
+        }
+      />
 
-
-
-<Route
+      <Route
         path="/jobs"
         element={
           <ProtectedRoute>
@@ -51,12 +76,9 @@ const App = () => (
         }
       />
 
-
-
-<Route path="/jobs/:id" element={<JobItemDetailsWrapper />} />
-<Route path="/not-found" element={<NotFound />} />
-<Route path="*" element={<Navigate to="/not-found" />} />
-
+      <Route path="/jobs/:id" element={<JobItemDetailsWrapper />} />
+      <Route path="/not-found" element={<NotFound />} />
+      <Route path="*" element={<Navigate to="/not-found" />} />
     </Routes>
   </BrowserRouter>
 );
